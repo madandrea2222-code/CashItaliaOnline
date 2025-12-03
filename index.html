@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>CashItalia - تحويل</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <div class="splash">
+    <img src="assets/logo.svg" class="logo" alt="CashItalia logo"/>
+    <h1>CashItalia</h1>
+  </div>
+
+  <nav class="nav">
+    <a href="index.html" class="active">تحويل</a>
+    <a href="about.html">عن البرنامج</a>
+    <a href="policy.html">سياسة الاستخدام</a>
+    <a href="faq.html">الأسئلة الشائعة</a>
+  </nav>
+
+  <main class="container">
+    <section class="card">
+      <h2>تحويل الأموال</h2>
+      <div class="row">
+        <div class="col">
+          <label>من</label>
+          <select id="currencyFrom"></select>
+        </div>
+        <div class="col">
+          <label>إلى</label>
+          <select id="currencyTo"></select>
+        </div>
+      </div>
+
+      <label>المبلغ</label>
+      <input type="number" id="amount" placeholder="أدخل المبلغ">
+
+      <label>وسيلة الدفع</label>
+      <select id="payMethod" name="payMethod">
+        <option value="">اختر وسيلة الدفع</option>
+        <option value="perfectmoney">Perfect Money</option>
+        <option value="paypal">PayPal</option>
+        <option value="instapay">InstaPay</option>
+        <option value="etisalat">اتصالات كاش</option>
+        <option value="vodafone">فودافون كاش</option>
+      </select>
+
+      <label id="accountLabel">رقم الحساب / المحفظة</label>
+      <input type="text" id="account" placeholder="أدخل رقم الحساب أو المحفظة">
+      <div id="accountError" class="error"></div>
+
+      <div class="row small">
+        <div class="col">
+          <label>العمولة (%)</label>
+          <input type="number" id="commissionRate" value="2" min="0" step="0.1">
+        </div>
+        <div class="col">
+          <label>النتيجة</label>
+          <div id="result" class="result-box">-</div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="btnPreview">التالي — تأكيد الطلب</button>
+        <button class="secondary" onclick="location.reload()">مسح</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">© 2025 CashItalia</footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
